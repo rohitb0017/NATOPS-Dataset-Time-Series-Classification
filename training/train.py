@@ -40,7 +40,7 @@ learning_rate = best_hyperparams["learning_rate"]
 print(f"Training with best hyperparameters: {best_hyperparams}")
 
 # Define model
-input_dim = 51
+input_dim = 24
 num_classes = 6
 model = LSTMClassifier(input_dim, hidden_dim, num_layers, num_classes, bidirectional).to(device)
 
