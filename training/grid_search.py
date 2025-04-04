@@ -38,7 +38,7 @@ for hidden_dim, num_layers, bidirectional in itertools.product(hidden_dims, num_
     print(f"Testing: hidden_dim={hidden_dim}, num_layers={num_layers}, bidirectional={bidirectional}")
 
     # Initialize model
-    input_dim = 51  
+    input_dim = 24  
     num_classes = 6
     model = LSTMClassifier(input_dim, hidden_dim, num_layers, num_classes, bidirectional).to(device)
 
@@ -46,7 +46,7 @@ for hidden_dim, num_layers, bidirectional in itertools.product(hidden_dims, num_
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # Train for a few epochs
-    for epoch in range(3):  
+    for epoch in range(50):  
         model.train()
         for X_batch, y_batch in train_loader:
             X_batch, y_batch = X_batch.to(device), y_batch.to(device)
