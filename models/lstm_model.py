@@ -12,5 +12,5 @@ class LSTMClassifier(nn.Module):
     def forward(self, x):
         lstm_out, _ = self.lstm(x)  # lstm_out shape: [batch_size, seq_len, hidden_dim]
         lstm_out = lstm_out[:, -1, :]  # Take last timestep output
-        output = self.fc(lstm_out)
+        output = self.fc(lstm_out) #map the output (h_t) to class scores
         return output
